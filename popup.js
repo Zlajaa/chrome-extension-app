@@ -18,6 +18,7 @@ registerSwButton.addEventListener('click', async (evt) => {
 });
 
 sendMessageButton.addEventListener('click', async (evt) => {
+  backgroundMessage.innerHTML = 'Sending...';
   const { status } = await chrome.runtime.sendMessage({ name: 'example_popup', method: 'send' });
 
   backgroundMessage.innerHTML = `Response: ${status}`;
